@@ -1,0 +1,323 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --spacing-xs: 8px;
+  --spacing-sm: 16px;
+  --spacing-md: 24px;
+  --spacing-lg: 32px;
+  --spacing-xl: 40px;
+  --spacing-2xl: 64px;
+  --spacing-3xl: 80px;
+
+  --container-padding: 30px;
+  --max-width: 1200px;
+}
+
+/* Base styles */
+.nav div {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+}
+
+/* Header Section */
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xl);
+  margin-bottom: var(--spacing-xl);
+  padding: var(--spacing-3xl) var(--container-padding) var(--spacing-3xl);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.titleContainer {
+  flex: 1;
+  min-width: 300px;
+}
+
+.mainHeader {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: clamp(32px, 5vw, 64px);
+  line-height: 1.2;
+}
+
+.smallHeaderDescription {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  margin-top: var(--spacing-sm);
+  font-size: clamp(14px, 2vw, 16px);
+}
+
+.links {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+  flex-wrap: wrap;
+}
+
+.links img {
+  width: 45px;
+  height: 45px;
+  transition: transform 0.2s;
+}
+
+.links img:hover {
+  transform: scale(1.1);
+}
+
+.figure {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.figure img {
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Experience Section */
+.experienceContainer {
+  margin-bottom: var(--spacing-xl);
+  padding: var(--spacing-2xl) var(--container-padding) var(--spacing-2xl);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.headerContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xl);
+  margin-bottom: var(--spacing-lg);
+}
+
+.workTitleContainer {
+  flex: 1;
+  min-width: 280px;
+}
+
+.workTitleContainer > div:first-child {
+  font-size: clamp(28px, 4vw, 36px);
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+  margin-bottom: var(--spacing-sm);
+}
+
+.secondSmallDesc {
+  font-size: clamp(14px, 2vw, 16px);
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+}
+
+.secondPhoto {
+  width: 250px;
+  height: auto;
+}
+
+.mainWorkContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.workBoxContainer {
+  width: 100%;
+  min-height: 320px;
+  background-color: #f5f5f4;
+  border-radius: 15px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.workBoxContainer:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.workLogo {
+  width: 100px;
+  height: auto;
+  margin: var(--spacing-md);
+}
+
+.workTitle {
+  font-size: 20px;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+  margin: 0 var(--spacing-md);
+}
+
+.duration {
+  font-size: 13px;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  margin: var(--spacing-sm) var(--spacing-md);
+}
+
+.workDescription {
+  font-size: 16px;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  margin: 0 var(--spacing-md) var(--spacing-md);
+}
+
+/* Technologies Section */
+.technologiesContainer {
+  margin-bottom: var(--spacing-xl);
+  padding: var(--spacing-3xl) var(--container-padding) var(--spacing-2xl);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.techTitle {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: clamp(32px, 5vw, 64px);
+  font-style: italic;
+  text-align: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.techDesc {
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto var(--spacing-xl);
+  padding: 0 var(--spacing-md);
+  font-size: clamp(14px, 2vw, 16px);
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+}
+
+.toolsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  justify-content: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.smallerToolContainer {
+  background-color: #f5f5f4;
+  border-radius: 5px;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.smallerToolContainer:hover {
+  background-color: #e7e7e5;
+  transform: scale(1.05);
+}
+
+/* Footer */
+.footerContainer {
+  padding: var(--spacing-2xl) var(--container-padding);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.footerContainer > p {
+  font-size: clamp(16px, 2vw, 21px);
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  margin-bottom: var(--spacing-md);
+}
+
+.linksContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-xl);
+  margin-bottom: var(--spacing-xl);
+}
+
+.linksContainer > div > div:first-child {
+  font-size: 18px;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  margin-bottom: var(--spacing-sm);
+}
+
+.linksContainer a {
+  display: block;
+  font-size: 16px;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  padding-top: var(--spacing-sm);
+  color: #5c5a5a;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.linksContainer a:hover {
+  color: #000;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 768px) {
+  :root {
+    --container-padding: 20px;
+    --spacing-3xl: 40px;
+    --spacing-2xl: 32px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .titleContainer {
+    order: 2;
+  }
+
+  .figure {
+    order: 1;
+  }
+
+  .links {
+    justify-content: center;
+  }
+
+  .mainWorkContainer {
+    grid-template-columns: 1fr;
+  }
+
+  .headerContainer {
+    flex-direction: column;
+  }
+
+  .linksContainer {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --container-padding: 16px;
+  }
+
+  .links img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .workBoxContainer {
+    min-height: auto;
+  }
+}
