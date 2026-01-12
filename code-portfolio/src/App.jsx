@@ -15,6 +15,7 @@ import et from "./assets/et.jpg";
 import web from "./assets/web.jpg";
 import swecc from "./assets/swecc.png";
 import cladlabs from "./assets/CladLabs.jpg";
+import udsm from "./assets/UDSM.jpg";
 
 function App() {
   // work experience hardcoded
@@ -32,6 +33,12 @@ function App() {
       desc: "Built a smart restaurant recommendation algorithm serving 500+ students. Matches users based on dietary restrictions, cuisine preferences, and group compatibility.",
     },
     {
+      logo: udsm,
+      title: "Web Dev @ UDSM",
+      duration: "January 2026 - Present",
+      desc: "Revamping the web app for a student-run free clinic serving Seattle's homeless population. Collaborating with leadership to amplify their mission for healthcare equity.",
+    },
+    {
       logo: web,
       title: "Developer @ Web Impact",
       duration: "January 2025 - June 2025",
@@ -41,7 +48,7 @@ function App() {
       logo: cseed,
       title: "Builder @ CSEED BuildSpace Cohort",
       duration: "September 2024 - November 2024",
-      desc: "Prototyped and pitched a marketplace connecting UW students with freelance barbers and artists. ",
+      desc: "Prototyped and pitched a marketplace connecting UW students with freelance barbers and artists.",
     },
     {
       logo: swecc,
@@ -108,12 +115,12 @@ function App() {
       <header className="header">
         <div className="titleContainer">
           <div className="mainHeader">
-            Hey, I'm Matt! Full-stack Developer & AI/ML Engineer
+            Hey, I'm Matt! Full-stack Developer & AI Engineer
           </div>
           <div className="smallHeaderDescription">
-            CS student at the University of Washington passionate about building
-            products that solve real problems. Y Combinator founder, club
-            leader, and always shipping.
+            CS student at UW specializing in full-stack development and AI
+            integration. Built ad targeting systems at Clad Labs (YC F25) and
+            mobile apps serving 500+ users.
           </div>
           <nav className="links">
             <a href="https://github.com/mattycakes14" target="_blank">
@@ -139,9 +146,10 @@ function App() {
           <div className="workTitleContainer">
             <div>Experience & Leadership</div>
             <div className="secondSmallDesc">
-              From Y Combinator-backed startups to campus organizations, here's
-              where I've shipped products, led teams, and learned what it takes
-              to build things people actually use.
+              Here are my experiences so far ever since I started my programming
+              and engineering journey here at UW. Each role taught me something
+              new about building for users, shipping to production, and
+              iterating based on real feedback.
             </div>
           </div>
           <figure>
