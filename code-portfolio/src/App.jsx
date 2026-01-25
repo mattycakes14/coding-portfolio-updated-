@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import "./App.css";
 import "devicon/devicon.min.css";
 
@@ -8,6 +9,7 @@ import mainPicture from "./assets/computer.jpg";
 // import secondPhoto from "./assets/secondphoto.jpg";
 import WorkBox from "./WorkBox";
 import Tool from "./Tool";
+import { client, urlFor } from "./sanityClient";
 
 // work image imports
 import cseed from "./assets/cseed.png";
@@ -18,6 +20,19 @@ import cladlabs from "./assets/CladLabs.jpg";
 import udsm from "./assets/UDSM.jpg";
 
 function App() {
+  // Sanity data state
+  const [siteSettings, setSiteSettings] = useState(null);
+
+  useEffect(() => {
+    client
+      .fetch(`*[_type == "siteSettings"][0]`)
+      .then((data) => {
+        console.log("Sanity data:", data);
+        setSiteSettings(data);
+      })
+      .catch(console.error);
+  }, []);
+
   // work experience hardcoded
   const workExperience = [
     {
@@ -107,38 +122,42 @@ function App() {
 
   return (
     <>
-      {/* <nav className="nav">
-        <div>Home</div>
-        <div>Projects</div>
-        <div>Contact Me</div>
-      </nav> */}
       <header className="header">
         <div className="titleContainer">
           <div className="mainHeader">
-            Hey, I'm Matt! Full-stack Developer & AI Engineer
+            {siteSettings?.headerTitle ||
+              "Hey, I'm Matt! Full-stack Developer & AI Engineer"}
           </div>
           <div className="smallHeaderDescription">
-            CS student at UW specializing in full-stack development and AI
-            integration. Built ad targeting systems at Clad Labs (YC F25) and
-            mobile apps serving 500+ users.
+            {siteSettings?.headerDescription ||
+              "CS student at UW specializing in full-stack development and AI integration. Built ad targeting systems at Clad Labs (YC F25) and mobile apps serving 500+ users."}
           </div>
           <nav className="links">
-            <a href="https://github.com/mattycakes14" target="_blank">
+            <a
+              href={siteSettings?.socialLinks?.github || "https://github.com/mattycakes14"}
+              target="_blank"
+            >
               <img src={github} alt="github"></img>
             </a>
             <a
-              href="https://www.linkedin.com/in/matt-lau-7b482531b/"
+              href={siteSettings?.socialLinks?.linkedin || "https://www.linkedin.com/in/matt-lau-7b482531b/"}
               target="_blank"
             >
               <img src={linkedin} alt="linkedin"></img>
             </a>
-            <a href="https://x.com/RealMattLau14" target="_blank">
+            <a
+              href={siteSettings?.socialLinks?.twitter || "https://x.com/RealMattLau14"}
+              target="_blank"
+            >
               <img src={twitter} alt="twitter"></img>
             </a>
           </nav>
         </div>
         <figure className="figure">
-          <img src={mainPicture} alt="Flat icon image"></img>
+          <img
+            src={siteSettings?.headerImage ? urlFor(siteSettings.headerImage).url() : mainPicture}
+            alt="Flat icon image"
+          ></img>
         </figure>
       </header>
       <section className="experienceContainer">
