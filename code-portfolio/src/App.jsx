@@ -6,7 +6,6 @@ import github from "./assets/github.png";
 import linkedin from "./assets/linkedin.png";
 import twitter from "./assets/twitter.png";
 import mainPicture from "./assets/computer.jpg";
-// import secondPhoto from "./assets/secondphoto.jpg";
 import WorkBox from "./WorkBox";
 import Tool from "./Tool";
 import { client, urlFor } from "./sanityClient";
@@ -134,19 +133,28 @@ function App() {
           </div>
           <nav className="links">
             <a
-              href={siteSettings?.socialLinks?.github || "https://github.com/mattycakes14"}
+              href={
+                siteSettings?.socialLinks?.github ||
+                "https://github.com/mattycakes14"
+              }
               target="_blank"
             >
               <img src={github} alt="github"></img>
             </a>
             <a
-              href={siteSettings?.socialLinks?.linkedin || "https://www.linkedin.com/in/matt-lau-7b482531b/"}
+              href={
+                siteSettings?.socialLinks?.linkedin ||
+                "https://www.linkedin.com/in/matt-lau-7b482531b/"
+              }
               target="_blank"
             >
               <img src={linkedin} alt="linkedin"></img>
             </a>
             <a
-              href={siteSettings?.socialLinks?.twitter || "https://x.com/RealMattLau14"}
+              href={
+                siteSettings?.socialLinks?.twitter ||
+                "https://x.com/RealMattLau14"
+              }
               target="_blank"
             >
               <img src={twitter} alt="twitter"></img>
@@ -155,7 +163,11 @@ function App() {
         </div>
         <figure className="figure">
           <img
-            src={siteSettings?.headerImage ? urlFor(siteSettings.headerImage).url() : mainPicture}
+            src={
+              siteSettings?.headerImage
+                ? urlFor(siteSettings.headerImage).url()
+                : mainPicture
+            }
             alt="Flat icon image"
           ></img>
         </figure>
