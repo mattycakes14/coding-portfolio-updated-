@@ -1,4 +1,3 @@
-import React from "react";
 import "./App.css";
 const WorkBox = ({ logo, title, desc, duration }) => {
   return (

@@ -1,4 +1,3 @@
-import react from "react";
 const Tool = ({ icon, name }) => {
   return (
     <div className="smallerToolContainer">
